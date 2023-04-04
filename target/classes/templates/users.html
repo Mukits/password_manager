@@ -47,9 +47,14 @@
               <tr>
                 <th scope="col">Id</th>
                 <th scope="col">Name</th>
-                <th scope="col">Password</th>
+                <div th:if="${param.masterMode}">
+                <th scope="col">Hashes</th>
+                </div>
                 <th scope="col">Website Name</th>
                 <th scope="col">Date And Time</th>
+                <div th:if="${param.masterMode}">
+                  <th scope="col">Original Password</th>
+                </div>
                 <th scope="col">Actions</th>
               </tr>
             </thead>
@@ -57,9 +62,14 @@
               <tr th:each="user : ${users}">
                 <th scope="row">[[${user.id}]]</th>
                 <td>[[${user.name}]]</td>
+                <div th:if="${param.masterMode}">
                 <td>[[${user.password}]]</td>
+                </div>
                 <td>[[${user.websiteName}]]</td>
                 <td>[[${user.creationDate}]]</td>
+                <div th:if="${param.masterMode}">
+                  <td>[[${user.originalPassword}]]</td>
+                </div>
                
                 <td>
                   <a th:href="@{'/users/' + ${user.id}}" title="Edit this User"
