@@ -1,5 +1,5 @@
 # password-manager
-web-based multi password manager using using Spring Boot framework
+web-based multi password manager using Spring Boot framework
 
 # How to run
 1. run the main class java.com.multipasswordmngr.PasswordManager.java
